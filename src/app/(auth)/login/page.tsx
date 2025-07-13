@@ -5,7 +5,7 @@ import { GoogleButton } from "@/components/auth/GoogleButton";
 import { GithubButton } from "@/components/auth/GithubButton";
 import { Inter } from "next/font/google";
 import Image from "next/image";
-
+import { signInWithGoogle, signInWithGithub } from "@/lib/auth-actions";
 const inter = Inter({
   weight: ["700", "800"],
   subsets: ["latin"],
@@ -46,10 +46,10 @@ export default function LoginPage() {
             <div className="space-y-4 pt-4">
               <GoogleButton
                 className="w-full h-14 bg-white border-2 border-gray-200 text-gray-900 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 text-base font-medium"
-                onClick={() => console.log("Google Sign In Clicked")}
+                onClick={signInWithGoogle}
               />
               <GithubButton
-                onClick={() => console.log("GitHub Sign In Clicked")}
+                onClick={signInWithGithub}
                 className="w-full h-14 border-2 border-gray-200 text-gray-900 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 text-base font-medium"
               />
             </div>
